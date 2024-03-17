@@ -75,7 +75,42 @@ while Exit == False:
         else:
             print("Invalid input")
     
+    
+    #-------- Code Here Task 2: -------------
     elif Option == 2:
+        
+        num = input("Enter Float Number: ")          
+        # Verify input is float
+        
+        # while type(num) != float:
+        #     print("Try again : Input must be a float")
+        #     num = input("Enter Float Number: ")
+        
+        # Unit Conversion Menu
+        
+        Conversion_Menu = int(input(
+            "\nChoose the unit to convert:\n"
+            "(1) Pressure units\n"
+            "(2) Wind Speed units\n"))
+        
+        if Conversion_Menu == 1:
+            Pressure_Menu = int(input(
+            "\nSelect Original Pressure Unit and Value:\n"
+            "(1) Pascal (Pa)\n"
+            "(2) Atmosphere (atm)\n"
+            "(3) Bar (bar)\n"))
+            
+        elif Conversion_Menu == 2:
+            pass
+        else:
+            print("Invalid Input")
+        
+
+        
+            
+        
+            
+        
         print("You chose option 2")
     elif Option == 3:
         print("You chose option 3")
@@ -84,3 +119,16 @@ while Exit == False:
         Exit = True
     else:
         print("Invalid option")
+        
+        
+        
+    # --------- Task 2 Step by Step: ------------
+    # Task 2A
+    #-> Return too Main Menu (Done)
+    #-> Valid Inputs in Menu (Done)
+    #-> Option 2 input must be Float, else try again input 
+    
+    
+    
+    
+    
