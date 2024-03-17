@@ -79,15 +79,23 @@ while Exit == False:
     #-------- Code Here Task 2: -------------
     elif Option == 2:
         
-        num = input("Enter Float Number: ")          
-        # Verify input is float
-        
-        # while type(num) != float:
-        #     print("Try again : Input must be a float")
-        #     num = input("Enter Float Number: ")
-        
-        # Unit Conversion Menu
-        
+        # Verification of float input
+        valid = False
+        while valid != True:   
+            try:
+                num = float(input("Enter a float number: "))
+                
+                if type(num) != float:
+                    continue
+                else:
+                    break
+            
+            except:
+                # If the input cannot be converted to an integer, prompt the user again
+                print("Invalid input. Please enter a valid input.")
+                        
+
+            
         Conversion_Menu = int(input(
             "\nChoose the unit to convert:\n"
             "(1) Pressure units\n"
@@ -100,8 +108,49 @@ while Exit == False:
             "(2) Atmosphere (atm)\n"
             "(3) Bar (bar)\n"))
             
+            Convert_menu = int(input(
+            "\nConvert Pressure Unit too:\n"
+            "(1) Pascal (Pa)\n"
+            "(2) Atmosphere (atm)\n"
+            "(3) Bar (bar)\n"))
+            
+            if Pressure_Menu == 1 and Convert_menu == 2: # Pascal -> Atm
+                # 1 pascal = 9.8692 * 10 ** -6 (atm)
+                convert = num * (9.8692 * (10**-6))
+                print("Pascal -> Atm",convert)
+            elif Pressure_Menu == 1 and Convert_menu == 3: # Pascal -> Bar
+                # 1 pascal = 0.00001 (bar)
+                convert = num * (0.00001)
+                print("Pascal -> Bar",convert)
+            elif Pressure_Menu == 2 and Convert_menu == 1: # Atm -> Pascal
+                # 1 atm = 101325 pa
+                convert = num * (101325)
+                print("Atm -> Pascal",convert)
+            elif Pressure_Menu == 2 and Convert_menu == 3: # Atm -> Bar
+                # 1 Atm = 1.01325
+                convert = num * (1.01325)
+                print("Atm -> Bar",convert)
+            elif Pressure_Menu == 3 and Convert_menu == 1: # Bar -> Pascal
+                # 1 pascal = 100000(bar)
+                convert = num * (100000)
+                print("Pascal -> Bar",convert)
+            elif Pressure_Menu == 3 and Convert_menu == 2: # Bar -> Atm
+                # 1 pascal = 0.98692 (bar)
+                convert = num * (0.98692)
+                print("Pascal -> Bar",convert)
+            elif Pressure_Menu == Convert_menu:
+                print("Base Conversion are the same:",num)
+            else:
+                print("Invalid Option")
+            
+            
         elif Conversion_Menu == 2:
-            pass
+            Wind_speed_units = int(input(
+            "\nEnter the original wind speed unit:\n"
+            "(m/s) Meters per second \n"
+            "(km/h) Kilometers per hour\n"
+            "(mph) Miles per hour\n"))
+            
         else:
             print("Invalid Input")
         
