@@ -133,11 +133,11 @@ while Exit == False:
             elif Pressure_Menu == 3 and Convert_menu == 1: # Bar -> Pascal
                 # 1 pascal = 100000(bar)
                 convert = num * (100000)
-                print("Pascal -> Bar",convert)
+                print("Bar -> Pascal",convert)
             elif Pressure_Menu == 3 and Convert_menu == 2: # Bar -> Atm
                 # 1 pascal = 0.98692 (bar)
                 convert = num * (0.98692)
-                print("Pascal -> Bar",convert)
+                print("Bar -> Atm",convert)
             elif Pressure_Menu == Convert_menu:
                 print("Base Conversion are the same:",num)
             else:
@@ -150,6 +150,41 @@ while Exit == False:
             "(m/s) Meters per second \n"
             "(km/h) Kilometers per hour\n"
             "(mph) Miles per hour\n"))
+            
+            Convert_menu = int(input(
+            "\nConvert wind speed unit too:\n"
+            "(m/s) Meters per second \n"
+            "(km/h) Kilometers per hour\n"
+            "(mph) Miles per hour\n"))
+            
+            if Wind_speed_units == 1 and Convert_menu == 2: # m/s -> km/h
+                # 1 m/s = 3.6 km/h
+                convert = num * (3.6)
+                print("Pascal -> Atm",convert)
+            elif  Wind_speed_units == 1 and Convert_menu == 3:#m/s ->mph
+                # 1 m/s = 2.23694 mph
+                convert = num * (2.23694)
+                print("Pascal -> Bar",convert)
+            elif  Wind_speed_units == 2 and Convert_menu == 1: #km/h -> m/s
+                # 1 km/h = 0.277778 m/s
+                convert = num * (0.277778)
+                print("Atm -> Pascal",convert)
+            elif  Wind_speed_units == 2 and Convert_menu == 3: #km/h -> mph
+                # 1 km/h = 0.621371
+                convert = num * (0.621371)
+                print("Atm -> Bar",convert)
+            elif  Wind_speed_units == 3 and Convert_menu == 1: # mph -> m/s
+                # 1 mph = 0.44704 m/s
+                convert = num * (0.44704)
+                print("Pascal -> Bar",convert)
+            elif  Wind_speed_units == 3 and Convert_menu == 2: # mph -> km/h
+                # 1 mph = 1.60934
+                convert = num * (1.60934)
+                print("Pascal -> Bar",convert)
+            elif  Wind_speed_units == Convert_menu:
+                print("Base Conversion are the same:",num)
+            else:
+                print("Invalid Option")
             
         else:
             print("Invalid Input")
